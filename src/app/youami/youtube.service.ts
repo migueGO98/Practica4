@@ -11,9 +11,8 @@ export class YoutubeService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getListaVideos() {
-    return this.httpClient.get(`https://content.googleapis.com/youtube/v3/playlistItems?playlistId=PLC3A5E11175C29533&maxResults=50&part=id,snippet&key=${this.keyApi}`);
-
+  getListaVideos(idPlaylist: string) {
+    return this.httpClient.get(`https://content.googleapis.com/youtube/v3/playlistItems?playlistId=${idPlaylist}&maxResults=50&part=id,snippet&key=${this.keyApi}`);
   }
 
 }
