@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { YouamiComponent } from './youami/youami.component';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatInputModule } from '@angular/material/input';
+
+import { AppComponent } from './app.component';
+import { YouamiComponent } from './youami/youami.component';
 import { InputListComponent } from './components/input-list/input-list.component';
+import { ListaVideosComponent } from './components/lista-videos/lista-videos.component';
 
 
 @NgModule({
@@ -17,6 +20,7 @@ import { InputListComponent } from './components/input-list/input-list.component
     AppComponent,
     YouamiComponent,
     InputListComponent,
+    ListaVideosComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,8 @@ import { InputListComponent } from './components/input-list/input-list.component
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

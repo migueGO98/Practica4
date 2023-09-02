@@ -1,8 +1,14 @@
 <div class="busquedaPadre">
     <div class="busquedaHijo">
-        <mat-form-field appearance="outline" class="input">
-            <input matInput placeholder="Ingresa la URL de la PlayList">
-        </mat-form-field>
-        <button mat-raised-button color="primary" class="boton" type="submit">Buscar</button>
+        <form class="row" (ngSubmit)="enviarIdPlayList()">
+            <mat-form-field appearance="outline" class="input">
+                <input 
+                    matInput 
+                    [(ngModel)]="idPlayList" 
+                    name="idPlayList"
+                    placeholder="Ingresa la URL de la PlayList">
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary">Buscar</button>
+        </form>
     </div>
 </div>

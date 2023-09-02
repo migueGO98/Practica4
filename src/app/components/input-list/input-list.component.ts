@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-list',
@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class InputListComponent {
 
+  @Output()
+  public onNewString: EventEmitter<string> = new EventEmitter();
+
+  public idPlayList: string = ""
+
+  enviarIdPlayList(): void {
+    if(this.idPlayList.length === 0){
+      return
+    }else{
+      this.onNewString.emit(this.idPlayList)
+      this.idPlayList = ""
+    }
+  }
 }
