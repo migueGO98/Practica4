@@ -1,0 +1,7 @@
+.cajaPadre{
+    background: red;
+    width: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
