@@ -1,7 +1,7 @@
-.cajaPadre{
-    background: red;
-    width: auto;
-    display: flex;
-    justify-content: left;
-    align-items: center;
+.lista{
+    margin-top: 20px;
+}
+
+.video{
+    height: 500px;
 }

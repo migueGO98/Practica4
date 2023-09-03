@@ -1,15 +1,5 @@
-import { Component } from '@angular/core';
-
-
-export interface VideoYoutubeI {
-  artista: string,
-  titulo: string,
-  descripcion: string,
-  imagen: string,
-  idVideo: string
-}
-
-
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { VideoYoutubeI } from '../interfaces/interfaces';
 
 @Component({
   selector: 'app-lista-videos',
@@ -19,154 +9,16 @@ export interface VideoYoutubeI {
 
 export class ListaVideosComponent {
 
-  public listaVideos: VideoYoutubeI[] = [
-    {
-      artista: "Artista 1",
-      titulo: "Video 1",
-      descripcion: "Descripcion 1",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "h4UqMyldS7Q"
-    },
-    {
-      artista: "Artista 2",
-      titulo: "Video 2",
-      descripcion: "Descripcion 2",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "Zi_XLOBDo_Y",
-    },
-    {
-      artista: "Artista 3",
-      titulo: "Video 3",
-      descripcion: "Descripcion 3",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "QUH_Sr_aFy4"
-    },
-    {
-      artista: "Artista 4",
-      titulo: "Video 4",
-      descripcion: "Descripcion 4",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "v2AC41dglnM",
-    },
-    {
-      artista: "Artista 1",
-      titulo: "Video 1",
-      descripcion: "Descripcion 1",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "h4UqMyldS7Q"
-    },
-    {
-      artista: "Artista 2",
-      titulo: "Video 2",
-      descripcion: "Descripcion 2",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "Zi_XLOBDo_Y",
-    },
-    {
-      artista: "Artista 3",
-      titulo: "Video 3",
-      descripcion: "Descripcion 3",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "QUH_Sr_aFy4"
-    },
-    {
-      artista: "Artista 4",
-      titulo: "Video 4",
-      descripcion: "Descripcion 4",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "v2AC41dglnM",
-    },
-    {
-      artista: "Artista 1",
-      titulo: "Video 1",
-      descripcion: "Descripcion 1",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "h4UqMyldS7Q"
-    },
-    {
-      artista: "Artista 2",
-      titulo: "Video 2",
-      descripcion: "Descripcion 2",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "Zi_XLOBDo_Y",
-    },
-    {
-      artista: "Artista 3",
-      titulo: "Video 3",
-      descripcion: "Descripcion 3",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "QUH_Sr_aFy4"
-    },
-    {
-      artista: "Artista 4",
-      titulo: "Video 4",
-      descripcion: "Descripcion 4",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "v2AC41dglnM",
-    },
-    {
-      artista: "Artista 1",
-      titulo: "Video 1",
-      descripcion: "Descripcion 1",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "h4UqMyldS7Q"
-    },
-    {
-      artista: "Artista 2",
-      titulo: "Video 2",
-      descripcion: "Descripcion 2",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "Zi_XLOBDo_Y",
-    },
-    {
-      artista: "Artista 3",
-      titulo: "Video 3",
-      descripcion: "Descripcion 3",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "QUH_Sr_aFy4"
-    },
-    {
-      artista: "Artista 4",
-      titulo: "Video 4",
-      descripcion: "Descripcion 4",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "v2AC41dglnM",
-    },
-    {
-      artista: "Artista 1",
-      titulo: "Video 1",
-      descripcion: "Descripcion 1",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "h4UqMyldS7Q"
-    },
-    {
-      artista: "Artista 2",
-      titulo: "Video 2",
-      descripcion: "Descripcion 2",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "Zi_XLOBDo_Y",
-    },
-    {
-      artista: "Artista 3",
-      titulo: "Video 3",
-      descripcion: "Descripcion 3",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "QUH_Sr_aFy4"
-    },
-    {
-      artista: "Artista 4",
-      titulo: "Video 4",
-      descripcion: "Descripcion 4",
-      imagen: "https://i.ytimg.com/vi/1q8YQHqHi0E/hqdefault.jpg",
-      idVideo: "v2AC41dglnM",
-    },
-  ]
-  
   videoSeleccionado!: VideoYoutubeI;
 
+  @Input()
+  public listaVideos: VideoYoutubeI[] = []
+
+  @Output()
+  public idVideoSeleccionado: EventEmitter<string> = new EventEmitter();
+  
   onSelect(video: VideoYoutubeI): void {
-    this.videoSeleccionado = video;
-    console.log(this.videoSeleccionado);
-    
+    this.videoSeleccionado = video
+    this.idVideoSeleccionado.emit(this.videoSeleccionado.idVideo)
   }
 }

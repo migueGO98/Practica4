@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgFor } from '@angular/common';
+import { YouTubePlayerModule } from "@angular/youtube-player";
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
 import { YouamiComponent } from './youami/youami.component';
 import { InputListComponent } from './components/input-list/input-list.component';
 import { ListaVideosComponent } from './components/lista-videos/lista-videos.component';
+
 
 
 @NgModule({
@@ -38,6 +40,7 @@ import { ListaVideosComponent } from './components/lista-videos/lista-videos.com
     ReactiveFormsModule,
     MatListModule,
     MatDividerModule,
+    YouTubePlayerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
