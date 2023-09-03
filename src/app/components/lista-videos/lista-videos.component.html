@@ -1,1 +1,22 @@
-<p>lista-videos works!</p>
+<ol>
+    <div class="cajaPadre">
+        <li *ngFor="let video of listaVideos; let i = index">
+            <button 
+                [class.selected]="video === videoSeleccionado" 
+                (click)="onSelect(video)" 
+                type="button">
+                    <div class="cajaVideo">
+                        <p class="numeracion">{{ i+1 }}</p>
+                        <img [src]="video.imagen">
+                        <div class="informacionVideo">
+                            <h2>{{video.titulo}}</h2>
+                            <p>{{video.artista}}</p>
+                        </div>
+                    </div>
+            </button>
+        </li>
+    </div>
+</ol>
+  
+
+  

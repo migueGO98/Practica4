@@ -1,0 +1,46 @@
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cajaPadre{
+    width: auto;
+    height: 450px;
+    overflow: auto;
+    border: 1px solid white;
+    border-radius: 30px;
+    background-color: lightgray;
+    box-shadow: 0 0 50px #ccc;
+    padding: 10px 20px 20px 10px;
+}
+
+button {
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgrey;
+    color: white;
+}
+
+.cajaVideo{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 5px 0px;
+}
+
+.numeracion{
+    font-size: 20px;
+    width: 40px;
+    margin-right: 15px;
+}
+
+.informacionVideo{
+    margin-left: 15px;
+}
