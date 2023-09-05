@@ -1,15 +1,19 @@
-
 <div class="busquedaPadre">
-    <div class="busquedaHijo">
-        <form class="row" (ngSubmit)="enviarIdPlayList()">
-            <mat-form-field appearance="outline" class="input">
-                <input 
-                    matInput 
-                    [(ngModel)]="idPlayList" 
-                    name="idPlayList"
-                    placeholder="Ingresa la URL de la PlayList">
-            </mat-form-field>
-            <button type="submit" mat-raised-button color="primary">Buscar</button>
-        </form>
-    </div>
+  <div class="busquedaHijo">
+    <mat-form-field appearance="outline" class="input">
+      <mat-label>idPlayList </mat-label>
+      <input
+        matInput
+        [formControl]="idPlayList"
+        required
+        placeholder="Ingresa la URL de la PlayList"
+      />
+      <mat-error *ngIf="idPlayList.invalid">
+        {{ getErrorMessage() }}
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="enviarIdPlayList()">
+      Buscar
+    </button>
+  </div>
 </div>

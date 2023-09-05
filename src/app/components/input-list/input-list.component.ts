@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { MessageService } from 'primeng/api';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-input-list',
@@ -8,23 +8,22 @@ import { MessageService } from 'primeng/api';
 })
 export class InputListComponent {
 
-  @Output()
-  public onNewString: EventEmitter<string> = new EventEmitter();
+ @Output()
 
-  public idPlayList: string = ""
+ public onNewString: EventEmitter<string> = new EventEmitter();
 
-  constructor() {}
-//private messageService: MessageService
- // public messages: Message[] | undefined;
+ idPlayList = new FormControl('', [Validators.required]);
 
-  enviarIdPlayList(): void {
-    if(this.idPlayList.length === 0){
-      console.log("No hay valor");
-      //this.messageService.add({severity:'error', summary: 'Error', detail: 'No hay valor'});
-      return
-    }else{
-      this.onNewString.emit(this.idPlayList)
-      this.idPlayList = ""
-    }
+ constructor() {}
+
+ enviarIdPlayList(): void {
+  if(this.idPlayList.value !== null && this.idPlayList.value !== '') {
+    this.onNewString.emit(this.idPlayList.value)
+    this.idPlayList.reset();
   }
+ }
+
+ getErrorMessage() {
+  return this.idPlayList.hasError('required') ? 'Debes ingresar el id de la lista' : '';
+ }
 }
