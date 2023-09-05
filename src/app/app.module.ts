@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBarModule } from '@angular/material/snack-bar'; 
 
 import { AppComponent } from './app.component';
 import { YouamiComponent } from './youami/youami.component';
@@ -40,6 +41,7 @@ import { ListaVideosComponent } from './components/lista-videos/lista-videos.com
     ReactiveFormsModule,
     MatListModule,
     MatDividerModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,3 +3,9 @@
 @import "primeng/resources/primeng.css";
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: #f33535;
+  --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, .87);
+  --mat-snack-bar-button-color: rgba(255, 255, 255, .87);
+}

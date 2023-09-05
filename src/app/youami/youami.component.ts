@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { YoutubeService } from './youtube.service';
 import { VideoYoutubeI } from '../components/interfaces/interfaces';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { SnackbarckService } from '../snackbarck.service';
 
 @Component({
   selector: 'app-youami',
@@ -13,7 +14,7 @@ export class YouamiComponent implements OnInit {
   public listaVideos: VideoYoutubeI[] = []
   public idVideoSeleccionado!: SafeResourceUrl;
 
-  constructor(private youtubeService: YoutubeService, private sanitizer: DomSanitizer){  }
+  constructor(private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private snackbar: SnackbarckService){  }
 
   ngOnInit(): void {
     this.obtenerListaVideos("RDnCkblLhs0-4")
@@ -52,7 +53,10 @@ export class YouamiComponent implements OnInit {
         }
       })
     },
-      (error) => console.log(error, "sucedio un error"),
+      (error) => {
+        this.snackbar.showSnackbar("Error al obtener la lista de videos", "Cerrar")
+        console.log(error, "sucedio un error")
+      },
       () => {
         this.cambiarVideo(this.listaVideos[0].idVideo!)  
         console.log("Petición Finalizada")
