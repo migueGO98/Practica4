@@ -12,6 +12,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 
+import { MessagesModule } from 'primeng/messages';
+
 import { AppComponent } from './app.component';
 import { YouamiComponent } from './youami/youami.component';
 import { InputListComponent } from './components/input-list/input-list.component';
@@ -39,6 +41,7 @@ import { ListaVideosComponent } from './components/lista-videos/lista-videos.com
     ReactiveFormsModule,
     MatListModule,
     MatDividerModule,
+    MessagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
