@@ -8,22 +8,22 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class InputListComponent {
 
- @Output()
+  @Output()
 
- public onNewString: EventEmitter<string> = new EventEmitter();
+  public onNewString: EventEmitter<string> = new EventEmitter();
 
- idPlayList = new FormControl('', [Validators.required]);
+  idPlayList = new FormControl('', [Validators.required]);
 
- constructor() {}
+  constructor() { }
 
- enviarIdPlayList(): void {
-  if(this.idPlayList.value !== null && this.idPlayList.value !== '') {
-    this.onNewString.emit(this.idPlayList.value)
-    this.idPlayList.reset();
+  enviarIdPlayList(): void {
+    if (this.idPlayList.value !== null && this.idPlayList.value !== '') {
+      this.onNewString.emit(this.idPlayList.value)
+      this.idPlayList.reset();
+    }
   }
- }
 
- getErrorMessage() {
-  return this.idPlayList.hasError('required') ? 'Debes ingresar el id de la lista' : '';
- }
+  getErrorMessage() {
+    return this.idPlayList.hasError('required') ? 'Debes ingresar el id de la lista' : '';
+  }
 }

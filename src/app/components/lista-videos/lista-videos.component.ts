@@ -16,7 +16,7 @@ export class ListaVideosComponent {
 
   @Output()
   public idVideoSeleccionado: EventEmitter<string> = new EventEmitter();
-  
+
   onSelect(video: VideoYoutubeI): void {
     this.videoSeleccionado = video
     this.idVideoSeleccionado.emit(this.videoSeleccionado.idVideo)

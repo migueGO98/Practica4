@@ -1,23 +1,22 @@
 <app-input-list (onNewString)="recibirIdPlaylist($event)"></app-input-list>
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="video col-sm-12 col-lg-7">
-            <iframe 
-              width="100%"
-              height="100%" 
-              allowfullscreen
-              [src]="idVideoSeleccionado"
-            >
-            </iframe>
-        </div>
-        <div class="lista col-sm-12 col-lg-5">
-            <app-lista-videos 
-              [listaVideos]="listaVideos"
-              (idVideoSeleccionado)="cambiarVideo($event)"
-            >
-            </app-lista-videos>
-        </div>
-    </div>    
+  <div class="row">
+    <div class="video col-sm-12 col-lg-7">
+      <iframe
+        width="100%"
+        height="100%"
+        allowfullscreen
+        [src]="idVideoSeleccionado"
+      >
+      </iframe>
+    </div>
+    <div class="lista col-sm-12 col-lg-5">
+      <app-lista-videos
+        [listaVideos]="listaVideos"
+        (idVideoSeleccionado)="cambiarVideo($event)"
+      >
+      </app-lista-videos>
+    </div>
+  </div>
 </div>
-

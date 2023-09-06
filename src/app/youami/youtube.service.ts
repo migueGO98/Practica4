@@ -14,7 +14,7 @@ export class YoutubeService {
 
   getListaVideos(idPlaylist: string): Observable<any> {
     return this.httpClient
-    .get(`https://content.googleapis.com/youtube/v3/playlistItems?playlistId=${idPlaylist}&maxResults=50&part=id,snippet&key=${this.keyApi}`)
+      .get(`https://content.googleapis.com/youtube/v3/playlistItems?playlistId=${idPlaylist}&maxResults=50&part=id,snippet&key=${this.keyApi}`)
   }
 
 }

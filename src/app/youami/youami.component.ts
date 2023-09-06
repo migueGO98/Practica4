@@ -14,37 +14,37 @@ export class YouamiComponent implements OnInit {
   public listaVideos: VideoYoutubeI[] = []
   public idVideoSeleccionado!: SafeResourceUrl;
 
-  constructor(private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private snackbar: SnackbarckService){  }
+  constructor(private youtubeService: YoutubeService, private sanitizer: DomSanitizer, private snackbar: SnackbarckService) { }
 
   ngOnInit(): void {
     this.obtenerListaVideos("RDnCkblLhs0-4")
     this.idVideoSeleccionado = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/nCkblLhs0-4?autoplay=1`);
   }
 
-  recibirIdPlaylist(idPlaylist: string){
+  recibirIdPlaylist(idPlaylist: string) {
     this.obtenerListaVideos(idPlaylist)
   }
 
-  obtenerListaVideos(idPlaylist: string){
+  obtenerListaVideos(idPlaylist: string) {
     this.youtubeService.getListaVideos(idPlaylist).subscribe(data => {
       this.listaVideos = data.items.map((
-        item: { 
-          snippet: { 
-            channelTitle: string, 
+        item: {
+          snippet: {
+            channelTitle: string,
             title: string,
-            description: string, 
-            thumbnails?: { 
-              default?: { 
-                url?: string 
-              } 
-            }, 
-            resourceId: { 
-              videoId: string 
-            }, 
-          } 
+            description: string,
+            thumbnails?: {
+              default?: {
+                url?: string
+              }
+            },
+            resourceId: {
+              videoId: string
+            },
+          }
         }
-        ) => {
-          return {
+      ) => {
+        return {
           artista: item.snippet.channelTitle,
           titulo: item.snippet.title,
           descripcion: item.snippet.description,
@@ -58,7 +58,7 @@ export class YouamiComponent implements OnInit {
         console.log(error, "sucedio un error")
       },
       () => {
-        this.cambiarVideo(this.listaVideos[0].idVideo!)  
+        this.cambiarVideo(this.listaVideos[0].idVideo!)
         console.log("Petición Finalizada")
       }
     )
